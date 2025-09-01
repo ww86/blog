@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ww's Vampire Blog</title>
+    <!-- Use Google Fonts for a serif display and a clean sans-serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../blog.css">
+</head>
+<body class="selection:bg-accent-pink selection:text-base-black">
+    <!-- Main Parallax Background Layer -->
+    <div class="background-layer-1"></div>
+    <!-- Filigree/Lace Parallax Layer -->
+    <div class="background-layer-2"></div>
+    <!-- Faint animated fog layer -->
+    <div class="animated-fog"></div>
+    <!-- Interactive Candlelight Glow Layer -->
+    <div class="background-layer-3"></div>
+    
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+        <div class="container mx-auto px-4 py-2 text-center">
+            <h1 class="blog-title text-2xl sm:text-3xl md:text-4xl font-bold transition-all duration-2000"><a href="../index.html">Vampire Blog</a></h1>
+            <div class="ornamental-line"></div>
+            <nav class="space-x-4">
+                <a href="../contact.html" class="text-xs sm:text-sm uppercase font-light tracking-wide text-accent-lavender hover:text-accent-pink transition-colors">Contact & Info</a>
+            </nav>
+        </div>
+    </header>
 
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4">
+        <section class="content-container max-w-5xl mx-auto space-y-12 shadow-xl" id="blog-post">
+            <h2 class="text-4xl font-bold text-center font-serif">Placeholder Blog</h2>
+            <p class="text-center blog-date">Published September 2nd, 2025</p>
+            <div class="prose prose-invert max-w-none">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <blockquote class="blog-quote">
+                    <p>“The night is a canvas, and the shadows are my paint.”</p>
+                    <footer>— A. Vampire</footer>
+                </blockquote>
+                <h3>The Whispers of the Night</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                <h3>Eternal Shadows</h3>
+                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+            </div>
+        </section>
+        <div style="height: 25vh;"></div> <!-- Added blank space for scrolling -->
+    </main>
+    
+    <!-- Script for interactive effects -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const background1 = document.querySelector('.background-layer-1');
+            const background2 = document.querySelector('.background-layer-2');
+            const contentContainer = document.querySelector('.content-container');
+            const body = document.body;
+
+            // Handle parallax effect and dynamic transparency
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+
+                // Parallax layers move at different rates
+                background1.style.transform = `translateY(-${scrollY * 0.1}px)`;
+                background2.style.transform = `translateY(-${scrollY * 0.05}px)`;
+
+                // Dynamic opacity based on scroll position
+                const scrollPercentage = Math.min(1, scrollY / (contentContainer.clientHeight - window.innerHeight / 2));
+                const opacity = 0.85 - (scrollPercentage * 0.25);
+                contentContainer.style.opacity = opacity.toFixed(2);
+            });
+
+            // Handle the interactive candlelight effect
+            document.addEventListener('mousemove', (e) => {
+                const mouseX = (e.clientX / window.innerWidth) * 100;
+                const mouseY = (e.clientY / window.innerHeight) * 100;
+                body.style.setProperty('--mouse-x', `${mouseX}%`);
+                body.style.setProperty('--mouse-y', `${mouseY}%`);
+            });
+        });
+    </script>
+</body>
+</html>
