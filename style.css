@@ -1,0 +1,199 @@
+/* CSS Variables for the Color Palette */
+:root {
+    --base-black: #0a0a0a;
+    --base-white: #f5f5f5;
+    --accent-pink: #f1bef3; /* A dusty, rosy pink */
+    --accent-lavender: #a08dc9;
+    --accent-purple: #4a2d82;
+    --accent-gold: #b39b5b; /* Antique gold */
+    --accent-rose-gold: #b76e79;
+    --title-font: 'Cormorant Garamond', serif;
+    --body-font: 'Lora', sans-serif;
+}
+
+/* General Body Styling & Parallax Layers */
+body {
+    background-color: var(--base-black);
+    font-family: var(--body-font);
+    color: var(--base-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.background-layer-1 {
+    position: fixed;
+    inset: 0;
+    background-image: url('background.jpg'), url('https://picsum.photos/1920/1080?random=1');
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+    transition: transform 0.1s linear;
+}
+
+.background-layer-2 {
+    position: fixed;
+    inset: -10px;
+    background: radial-gradient(circle at center, rgba(10, 10, 10, 0.1) 0%, transparent 70%); /* Subtle smoky effect */
+    opacity: 0.5; /* Adjust opacity for visibility */
+    will-change: transform;
+    transition: transform 0.1s linear;
+}
+
+.background-layer-3 {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), transparent, var(--base-black) 80%);
+    transition: background 0.1s linear;
+    z-index: 10;
+}
+
+.animated-fog {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%); /* Reverted opacity, explicit center */
+    background-size: 200% 200%; /* Larger gradient to allow movement */
+    background-repeat: no-repeat;
+    animation: fog-drift 60s linear infinite; /* Reverted speed */
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes fog-drift {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Header Styling & Animations */
+.sticky-header {
+    z-index: 50;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(10px);
+    background: rgba(10, 10, 10, 0.6);
+    border-bottom: 0px solid rgba(255, 255, 255, 0.05);
+    animation: header-fade-in 3s ease-out forwards;
+}
+
+@keyframes header-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.blog-title {
+    font-family: var(--title-font);
+    letter-spacing: 0.15em;
+    text-shadow: 0 0 10px rgba(217, 156, 219, 0.5);
+    background-clip: text;
+    background-image: linear-gradient(to right, var(--accent-lavender), var(--accent-pink), var(--accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: title-shimmer 4s infinite;
+}
+
+@keyframes title-shimmer {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.3); }
+}
+
+/* Main Content Section Styling */
+.content-container {
+    position: relative;
+    z-index: 20;
+    margin-top: 5rem; /* Space below sticky header */
+    margin-bottom: 0rem;
+    padding: 2rem;
+    padding-top: 4rem;
+    border-radius: 0rem;
+    backdrop-filter: blur(6px);
+    background: linear-gradient(to bottom, var(--base-black) 50%, rgba(10, 10, 10, 0.8) 75%, transparent 100%);
+    opacity: 0.95; /* Starting opacity */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    min-height: 100vh;
+}
+
+.post-heading-link {
+    position: relative;
+    display: inline-block;
+    font-family: var(--title-font);
+    font-weight: 500;
+    color: var(--accent-pink);
+    text-align: center;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    font-size: 1.75rem; /* Text-3xl equivalent for smaller screens */
+    line-height: 1.2;
+    letter-spacing: 0.00em;
+}
+
+.post-heading-link:hover {
+    color: var(--accent-white);
+}
+
+/* Underline effect with subtle curve and shimmer */
+.post-heading-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, var(--accent-gold), transparent);
+    border-radius: 50%;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.post-heading-link:hover::after {
+    width: 100%;
+    font-size: 1.75rem;
+    transform: translateX(-50%) scaleX(1);
+}
+
+.post-divider {
+    width: 50%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--accent-rose-gold), transparent);
+    margin: 4rem auto;
+}
+
+.ornamental-line {
+    width: 75%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--accent-gold), transparent);
+    margin: 0.2rem auto;
+}
+
+/* Mobile-first styling */
+@media (min-width: 640px) {
+    .content-container {
+        padding: 4rem;
+    }
+    .post-heading-link {
+        font-size: 1.75rem; /* md:text-4xl */
+    }
+}
+
+@media (min-width: 768px) {
+    .post-heading-link {
+        font-size: 1.75rem; /* lg:text-5xl */
+    }
+}
+
+nav .nav-link {
+    font-family: 'Cinzel', serif;
+    font-weight: 400; /* Normal weight for Cinzel */
+    letter-spacing: 0.1em; /* Slightly increased letter spacing */
+}

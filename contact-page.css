@@ -1,0 +1,26 @@
+#contact h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    font-family: var(--title-font);
+    color: var(--accent-pink);
+    margin-bottom: 1rem;
+}
+
+#contact p {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: var(--base-white);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#contact a {
+    color: var(--accent-lavender);
+    text-decoration: none; /* Removed underline */
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: var(--accent-pink);
+}

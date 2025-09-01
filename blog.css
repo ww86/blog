@@ -1,0 +1,129 @@
+#blog-post h2 {
+    font-size: 2.25rem; /* Slightly smaller */
+    font-weight: bold;
+    text-align: center;
+    font-family: var(--title-font);
+    color: var(--base-white); /* Changed to white */
+    text-shadow: 0 0 8px rgba(245, 245, 245, 0.5); /* Subtle glow */
+    margin-bottom: 0.5rem; /* Smaller gap */
+    margin-top: 2.0rem;
+}
+
+#blog-post p {
+    font-size: 1.15rem; /* Adjusted font size for Lora */
+    line-height: 1.8; /* Adjusted line height for readability */
+    color: var(--base-white);
+    margin-bottom: 1.5rem;
+    font-family: 'Lora', serif;
+    font-weight: 400; /* Changed to normal weight for Lora */
+    letter-spacing: 0.01em; /* Subtle letter spacing */
+}
+
+#blog-post .prose {
+    color: var(--base-white);
+    padding-left: 2rem; /* Increased left margin */
+    padding-right: 2rem; /* Increased right margin */
+}
+
+#blog-post .prose a {
+    color: var(--accent-lavender);
+}
+
+#blog-post .prose a:hover {
+    color: var(--accent-pink);
+}
+
+#blog-post .prose h3 {
+    font-size: 1.75rem; /* Larger font for subheadings */
+    font-weight: 700; /* Increased font-weight */
+    font-family: 'Cormorant Garamond', serif; /* Keep title font for subheadings */
+    color: var(--accent-lavender);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#blog-post .blog-date {
+    font-size: 1.0rem; /* text-xs */
+    margin-top: 0.2rem; /* Smaller gap */
+    color: rgba(255, 255, 255, 0.411); /* Darker gray */
+    display: block; /* Ensure it's a block-level element */
+}
+
+#blog-post .prose p:first-of-type::first-letter {
+    font-family: var(--title-font);
+    font-size: 4em;
+    float: left;
+    line-height: 0.8;
+    margin-right: 0.1em;
+    color: var(--base-white); /* Brighter white */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(179, 155, 91, 0.5); /* Brighter glow */
+}
+
+/* Subtle texture for blog content container */
+#blog-post .content-container {
+    /* Removed background image and related properties */
+}
+
+/* Ornate divider for blog posts */
+.post-divider {
+    width: 50%;
+    height: 10px; /* Increased height for the SVG */
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDEwMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMCA1TDEwIDBMMjAgNUwzMCAwTDQwIDVMMTUwIDBMMTYwIDVMMTcwIDBMMTgwIDVMMTkwIDBMMjAwIDUiIHN0cm9rZT0iI2I3NmU3OSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9zdmc+");
+    background-repeat: repeat-x;
+    background-size: 100px 10px; /* Adjust size to fit the SVG */
+    margin: 4rem auto;
+}
+
+#blog-post .prose blockquote {
+    border-right: 4px solid var(--accent-gold);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    text-align: right;    
+    font-style: italic;
+    color: var(--base-white);
+    background-color: rgba(10, 10, 10, 0.5); /* Slightly transparent dark background */
+    border-radius: 0.25rem;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#blog-post .prose blockquote p {
+    font-size: 1.1rem; /* Slightly smaller font for quotes */
+    line-height: 1.6;
+    text-align: right;
+    margin-bottom: 0.5rem;
+}
+
+#blog-post .prose blockquote footer {
+    font-size: 0.9rem;
+    text-align: right;
+    color: rgba(245, 245, 245, 0.7);
+}
+
+#blog-post .prose ul {
+    list-style: none; /* Remove default bullet points */
+    padding-left: 1.5rem; /* Adjust padding for custom bullets */
+}
+
+#blog-post .prose ul li {
+    position: relative;
+    padding-left: 1.5rem; /* Space for the custom bullet */
+    margin-bottom: 0.5rem;
+}
+
+#blog-post .prose ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5em; /* Adjust vertical alignment */
+    width: 1em;
+    height: 1em;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48cGF0aCBmaWxsPSIjYjU2ZTc5IiBkPSJNMzIwIDBjLTM1LjMgMC02NCAyOC43LTY0IDY0VjE5MmMwIDM1LjMgMjguNyA2NCA2NCA2NHM2NC0yOC43IDY0LTY0VjY0YzAtMzUuMy0yOC43LTY0LTY0LTY0ek0xMjggMTkyYy0zNS4zIDAtNjQgMjguNy02NCA2NFYzODRjMCAzNS4zIDI4LjcgNjQgNjQgNjRzNjQtMjguNyA2NC02NFYyNTZjMC0zNS4zLTI4LjctNjQtNjQtNjR6TTUxMiAxOTJjLTM1LjMgMC02NCAyOC43LTY0IDY0VjM4NGMwIDM1LjMgMjguNyA2NCA2NCA2NHM2NC0yOC43IDY0LTY0VjI1NmMwLTM1LjMtMjguNy02NC02NC02NHpNMCAzODRjMC0zNS4zIDI4LjctNjQgNjQtNjRINTc2YzM1LjMgMCA2NCAyOC43IDY0IDY0djY0YzAgMzUuMy0yOC43IDY0LTY0IDY0SDY0Yy0zNS4zIDAtNjQtMjguNy02NC02NFYzODR6Ii8+PC9zdmc+");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#blog-post .prose blockquote.blog-quote p::first-letter {
+    all: unset; /* Resets all properties to their initial values */
+}
