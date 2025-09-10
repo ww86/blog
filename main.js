@@ -214,11 +214,17 @@ function initializePage() {
                 animateParticles();
             }
 
-            function animateParticles() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                for (let i = 0; i < particles.length; i++) {
-                    particles[i].update();
-                    particles[i].draw();
+            let lastTimestamp = 0;
+            const throttleInterval = 1000 / 20; // 20 FPS
+
+            function animateParticles(timestamp) {
+                if (timestamp - lastTimestamp > throttleInterval) {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    for (let i = 0; i < particles.length; i++) {
+                        particles[i].update();
+                        particles[i].draw();
+                    }
+                    lastTimestamp = timestamp;
                 }
                 requestAnimationFrame(animateParticles);
             }
