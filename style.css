@@ -62,9 +62,11 @@ body {
     padding: 2rem 0;
     background: linear-gradient(
         to bottom,
-        rgba(5, 3, 8, 0.95) 0%,
-        rgba(5, 3, 8, 0.92) 70%,
-        rgba(5, 3, 8, 0.6) 90%,
+        rgba(5, 3, 8, 0.85) 0%,
+        rgba(5, 3, 8, 1.00) 2%,        
+        rgba(5, 3, 8, 1.00) 20%,                
+        rgba(5, 3, 8, 0.95) 70%,
+        rgba(5, 3, 8, 0.4) 85%,
         transparent 100%
     );
 }
