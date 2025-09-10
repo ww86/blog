@@ -3,89 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ww's Vampire Blog</title>
-    <!-- Use Google Fonts for a serif display and a clean sans-serif -->
+    <title>Vampy blog</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN for utility classes -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Cinzel:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="root.css">
+    <link rel="stylesheet" href="wave_data.css">    
+    <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="style.css">
-</head>
-<body class="selection:bg-accent-pink selection:text-base-black">
-    <!-- Main Parallax Background Layer -->
-    <div class="background-layer-1"></div>
-    <!-- Filigree/Lace Parallax Layer -->
-    <div class="background-layer-2"></div>
-    <!-- Faint animated fog layer -->
-    <div class="animated-fog"></div>
-    <!-- Interactive Candlelight Glow Layer -->
-    <div class="background-layer-3"></div>
+    <link rel="stylesheet" href="parallax.css">
+  
     
-    <!-- Sticky Header -->
-    <header class="sticky-header">
-        <div class="container mx-auto px-4 py-2 text-center">
-            <h1 class="blog-title text-2xl sm:text-3xl md:text-4xl font-bold transition-all duration-2000"><a href="index.html">Vampire Blog</a></h1>
-            <div class="ornamental-line"></div>
-            <nav class="space-x-4">
-                <a href="contact.html" class="text-center text-xs sm:text-sm uppercase font-light tracking-wide text-accent-lavender hover:text-accent-pink transition-colors">Contact & Info</a>
-            </nav>
-        </div>
+</head>
+<body>
+
+    <header class="header">
+        <h1 id="main-title" class="header-title">
+            <a href="index.html">Vampire blog</a>
+        </h1>
+        <a href="contact.html" class="header-link">contact & info</a>
     </header>
 
-    <!-- Main Content Area -->
-    <main class="container mx-auto px-4">
-        <section class="content-container max-w-5xl mx-auto space-y-6 shadow-xl" id="blog-posts">
-            <!-- Blog Post Heading 2 -->
-            <div class="text-center">
-                <a href="01/blog.html" class="post-heading-link">New Blog Post Title Here</a>
-                <p class="mt-2 text-sm text-gray-400">Published November 1, 2025</p>
-            </div>
-            
-            <div class="post-divider"></div>
+    <main>
+        <div class="background">
+            <div class="background-image"></div>
+            <div class="background-gradient-overlay"></div>
+            <div class="parallax-layer parallax-fog strips-container dynamic-veil"></div>     
+            <div class="parallax-layer parallax-lace"></div>
+        </div>
+        <canvas id="particle-canvas"></canvas>
 
-            <!-- Blog Post Heading 1 -->
-            <div class="text-center">
-                <a href="00/blog.html" class="post-heading-link">Placeholder</a>
-                <p class="mt-2 text-sm text-gray-400">Published September 2, 2025</p>
+        <div class="dynamic-veil"></div>
+        <div class="content-wrapper">
+            <div class="main-content">
+                    <img src="tuonen.png" id="top-left-image">
+                    <section class="blog-list">
+                        <article class="blog-item">
+                            <h2><a href="00/blog.html" class="gilded-text">The Eternal Sin</a></h2>
+                            <p class="blog-list-date">Published: September 10th, 2025</p>
+                        </article>
+                    </section>
+                <div class="scroll-padding"></div>                    
+                </div>
             </div>
-            
-            <div class="post-divider"></div>
-
-            
-        </section>
+        <div class="scroll-padding"></div>
     </main>
+    <div class="cursor-light-overlay"></div>
     
-    <!-- Script for interactive effects -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const background1 = document.querySelector('.background-layer-1');
-            const background2 = document.querySelector('.background-layer-2');
-            const contentContainer = document.querySelector('.content-container');
-            const body = document.body;
+    <script src="main.js"></script>
+    <script src="parallax.js"></script>
 
-            // Handle parallax effect and dynamic transparency
-            window.addEventListener('scroll', () => {
-                const scrollY = window.scrollY;
-
-                // Parallax layers move at different rates
-                background1.style.transform = `translateY(-${scrollY * 0.1}px)`;
-                background2.style.transform = `translateY(-${scrollY * 0.05}px)`;
-
-                // Dynamic opacity based on scroll position
-                const scrollPercentage = Math.min(1, scrollY / (contentContainer.clientHeight - window.innerHeight / 2));
-                const opacity = 0.85 - (scrollPercentage * 0.25);
-                contentContainer.style.opacity = opacity.toFixed(2);
-            });
-
-            // Handle the interactive candlelight effect
-            document.addEventListener('mousemove', (e) => {
-                const mouseX = (e.clientX / window.innerWidth) * 100;
-                const mouseY = (e.clientY / window.innerHeight) * 100;
-                body.style.setProperty('--mouse-x', `${mouseX}%`);
-                body.style.setProperty('--mouse-y', `${mouseY}%`);
-            });
-        });
-    </script>
 </body>
 </html>

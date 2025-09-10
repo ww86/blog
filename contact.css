@@ -1,0 +1,54 @@
+/* --- Contact Page --- */
+.flex-container {
+    display: flex;
+}
+
+.w-1\/2 {
+    width: 50%;
+}
+
+.pr-8 {
+    padding-right: 2rem;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+
+
+#contact h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    font-family: var(--title-font);
+    color: var(--accent-pink);
+    margin-bottom: 1rem;
+}
+
+#contact p {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: var(--base-white);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#contact a {
+    color: var(--accent-lavender);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: var(--accent-pink);
+}
+
+.contact-image {
+    max-width: 100%;
+    height: auto;
+}

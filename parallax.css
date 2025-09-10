@@ -1,0 +1,129 @@
+
+
+
+
+
+/*
+ --- General Parallax Layer Styles ---
+ */
+.parallax-layer {
+    position: absolute;
+    top: -200%; /* Adjusted to hide the upper edge and accommodate new height */
+    left: 0;
+    width: 120%; /* Increased by 20% */
+    height: 400%; /* Multiplied by 2 */
+    pointer-events: none;
+    will-change: transform;
+}
+
+
+
+/*
+ --- Parallax Lace Layer (.parallax-lace) ---
+ */
+.parallax-lace {
+    opacity: 0.4;
+    will-change: transform, opacity;
+    animation: color-wave 240s linear infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes color-wave {
+    0% { background-color: rgba(128, 128, 128, 0.005); } /* Gray */
+    16% { background-color: rgba(104, 87, 252, 0.45); } /* Bright Indigo */
+    33% { background-color: rgba(255, 0, 0, 0.2); } /* Red */
+    50% { background-color: rgba(128, 0, 128, 0.3); } /* Purple */
+    66% { background-color: rgba(230, 230, 250, 0.3); } /* Lavender */
+    83% { background-color: rgba(255, 192, 203, 0.1); } /* Pink */
+    100% { background-color: rgba(128, 128, 128, 0.005); } /* Gray */
+}
+
+
+
+
+
+
+/*
+ --- New Strips Animation ---
+ */
+.strip {
+    position: absolute;
+    height: 100%;
+    will-change: transform, opacity;
+    background-image: linear-gradient(to right,
+        transparent,
+        rgba(140, 130, 150, 0.0) 10%,
+        rgba(140, 130, 150, 0.01) 15%,
+        rgba(140, 130, 150, 0.03) 50%,
+        rgba(140, 130, 150, 0.01) 75%,
+        rgba(140, 130, 150, 0.0) 90%,
+        transparent
+    );
+    /* These properties are dynamically set by JavaScript */
+    width: var(--initial-width, 0px); /* Default to 0px if not set by JS */
+    left: var(--initial-left, 0vw);   /* Default to 0vw if not set by JS */
+
+    /* Added vertical transparency gradient using mask-image */
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 40%, black 10%, transparent);  
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 40%, black 10%, transparent);    
+
+}
+
+@keyframes deform-1 {
+    0% { transform: scaleX(1) skewY(0deg); opacity: 0.15; }
+    50% { transform: scaleX(0.4) skewY(3deg); opacity: 0.8; }
+    100% { transform: scaleX(1) skewY(0deg); opacity: 0.15; }
+}
+@keyframes deform-2 {
+    0% { transform: scaleX(1) skewY(0deg); opacity: 0.1; }
+    50% { transform: scaleX(0.5) skewY(-4deg); opacity: 0.7; }
+    100% { transform: scaleX(1) skewY(0deg); opacity: 0.1; }
+}
+@keyframes deform-3 {
+    0% { transform: scaleX(1) skewY(0deg); opacity: 0.2; }
+    50% { transform: scaleX(0.35) skewY(0deg); opacity: 0.65; }
+    100% { transform: scaleX(1) skewY(0deg); opacity: 0.2; }
+}
+@keyframes deform-4 {
+    0% { transform: scaleX(1) skewY(0deg); opacity: 0.12; }
+    50% { transform: scaleX(0.45) skewY(0deg); opacity: 0.75; }
+    100% { transform: scaleX(1) skewY(0deg); opacity: 0.12; }
+}
+@keyframes deform-5 {
+    0% { transform: scaleX(1) skewY(0deg); opacity: 0.18; }
+    50% { transform: scaleX(0.3) skewY(0deg); opacity: 0.72; }
+    100% { transform: scaleX(1) skewY(0deg); opacity: 0.18; }
+}
+
+@keyframes sway-1 {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(40px); }
+    100% { transform: translateX(0); }
+}
+@keyframes sway-2 {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-30px); }
+    100% { transform: translateX(0); }
+}
+@keyframes sway-3 {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+    100% { transform: translateX(0); }
+}
+@keyframes sway-4 {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-50px); }
+    100% { transform: translateX(0); }
+}
+@keyframes sway-5 {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(8px); }
+    100% { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .strips-container {
+        animation: none !important;
+    }
+}

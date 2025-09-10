@@ -1,0 +1,54 @@
+/* CSS Variables & Color Palettes */
+:root {
+    /* Base Colors */
+    --black: #050308;
+    --white: #F8F8F8;
+    --base-white: #E5E5E5;    
+    --gray: #FFFFFF50;
+
+    /* White-Gold Palette (Default) */
+    --rose-pink-50: #ffecf3;
+    --rose-pink-100: #ffd9e7;
+    --rose-pink-300: #ff91b8;
+    --rose-pink-500: #e85994;
+    --rose-pink-700: #8a3458;
+    --lavender-50: #f3e7ff;
+    --lavender-100: #e8d0ff;
+    --lavender-300: #c190f8;
+    --lavender-500: #9350d1;
+    --lavender-700: #582a88;
+    --royal-purple-50: #eadbff;
+    --royal-purple-100: #d6b8ff;
+    --royal-purple-300: #9e64e8;
+    --royal-purple-500: #6d33a1;
+    --royal-purple-700: #421e63;
+    --indigo-50: #dadcff;
+    --indigo-100: #b5baff;
+    --indigo-300: #7b83f0;
+    --indigo-500: #4d57c2;
+    --indigo-700: #2b337c;
+    --antique-gold-50: #fdfbf0;
+    --antique-gold-100: #fbf7e2;
+    --antique-gold-300: #f1e0a8;
+    --antique-gold-500: #d8b96f;
+    --antique-gold-700: #8e7a42;
+    --white-gold-pink-50: #fdf8f9;
+    --white-gold-pink-100: #fcf1f4;
+    --white-gold-pink-300: #f8e1e7;
+    --white-gold-pink-500: #e0c8d1;
+    --white-gold-pink-700: #a29198;
+
+    /* Blog palette */
+
+
+    /* from old style.css */
+    --base-black: #0a0a0a;
+
+    --accent-pink: #f1bef3; /* A dusty, rosy pink */
+    --accent-lavender: #a08dc9;
+    --accent-purple: #4a2d82;
+    --accent-gold: #e0c781; /* Antique gold */
+    --accent-rose-gold: #b76e79;
+    --title-font: 'Cormorant Garamond', serif;
+    --body-font: 'Lora', sans-serif;
+}
