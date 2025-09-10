@@ -7,83 +7,180 @@
     <!-- Use Google Fonts for a serif display and a clean sans-serif -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN for utility classes -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Cinzel:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../root.css">
+    <link rel="stylesheet" href="../header.css">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../blog.css">
+    <link rel="stylesheet" href="../parallax.css">
+    <link rel="stylesheet" href="../audio_player.css">
 </head>
-<body class="selection:bg-accent-pink selection:text-base-black">
-    <!-- Main Parallax Background Layer -->
-    <div class="background-layer-1"></div>
-    <!-- Filigree/Lace Parallax Layer -->
-    <div class="background-layer-2"></div>
-    <!-- Faint animated fog layer -->
-    <div class="animated-fog"></div>
-    <!-- Interactive Candlelight Glow Layer -->
-    <div class="background-layer-3"></div>
-    
-    <!-- Sticky Header -->
-    <header class="sticky-header">
-        <div class="container mx-auto px-4 py-2 text-center">
-            <h1 class="blog-title text-2xl sm:text-3xl md:text-4xl font-bold transition-all duration-2000"><a href="../index.html">Vampire Blog</a></h1>
-            <div class="ornamental-line"></div>
-            <nav class="space-x-4">
-                <a href="../contact.html" class="text-xs sm:text-sm uppercase font-light tracking-wide text-accent-lavender hover:text-accent-pink transition-colors">Contact & Info</a>
-            </nav>
-        </div>
+<body>
+
+    <header class="header">
+        <h1 id="main-title" class="header-title">
+            <a href="../index.html">Vampire Blog</a>
+        </h1>
+        <a href="../contact.html" class="header-link">contact & info</a>
     </header>
 
-    <!-- Main Content Area -->
-    <main class="container mx-auto px-4">
-        <section class="content-container max-w-5xl mx-auto space-y-12 shadow-xl" id="blog-post">
-            <h2 class="text-4xl font-bold text-center font-serif">Placeholder Blog</h2>
-            <p class="text-center blog-date">Published September 2nd, 2025</p>
-            <div class="prose prose-invert max-w-none">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <blockquote class="blog-quote">
-                    <p>“The night is a canvas, and the shadows are my paint.”</p>
-                    <footer>— A. Vampire</footer>
-                </blockquote>
-                <h3>The Whispers of the Night</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-                <h3>Eternal Shadows</h3>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+    <main>
+        <div class="background">
+            <div class="background-image"></div>
+            <div class="background-gradient-overlay"></div>
+            <div class="parallax-layer parallax-lace"></div>
+            <div class="parallax-layer parallax-stars"></div>
+            <div class="parallax-layer parallax-fog strips-container"></div>
+        </div>
+        <canvas id="particle-canvas"></canvas>
+
+        <div class="dynamic-veil"></div>
+        <div class="content-wrapper">
+            <div class="main-content" id="blog-post">
+                <h2 class="">The Eternal Sin</h2>
+                <p class="blog-date">Published September 10th, 2025</p>
+                <div class="blog-content-prose">
+            
+
+<h3>Diablerie counter</h3>
+<p>
+  This blog proposes a new mechanic for <strong>Vampire: The Eternal Struggle</strong>.
+  Whenever a vampire commits <em>diablerie</em> a counter is placed on them, simply called
+  a "diablerie counter".
+</p>
+<p>
+  The counter does not have to have any codified effects on its own. Instead, the
+  significance of the counter can depend on future card designs which reference the counter.
+  This proposition as such is sound, as it has no effect on its own, albeit there is a hidden cost 
+  to tracking yet another counter. Instead, how it plays
+  out will be entirely dependent on how the cards that reference this new token or counter
+  function.
+</p>
+<figure>
+<img src="../bunny_001.jpg" alt="Diablerie counter." class="blog-image">
+<figcaption>
+    Surely players would come up with the tokens to use for this purpose. 
+    There definitely can be too many types of tokens and counters.
+    This seems fundamental enough to warrant one?
+</figcaption>
+</figure>
+
+<h3>Why?</h3>
+<p>
+  The purpose of this proposition is to provide a mechanism to create the potential for
+  secondary long-term consequences for <em>diablerie</em>, in addition to the primary and immediate
+  consequence of the <em>bloodhunt referendum</em>.
+</p>
+<p>
+  Sometimes <em>bloodhunts</em> don't occur for the diablerist due to opportunistic and
+  temporary reasons, or the <em>Methuselah</em> knows they can get away with it without
+  repercussions relatively easily. After the referendum, there is nothing (mostly).
+</p>
+<p>
+  The current cards which reference diablerists typically have a window within which they
+  can be played, such that it's the turn after, or during the act. 
+  It's rare enough so that it's not worthwhile to play
+  most of the current cards that reference it, and because they
+  don't have alternative uses.
+</p>
+<p>
+  See for example:<br>
+  <em>Subdued by the Blood</em>, <br>
+  <em>Crimson Fury</em>, <br>
+  <em>Sixth Tradition: Destruction</em>, <br>
+  <em>The Deadliest Sin</em>. <br>
+</p>
+<p>
+  For the acting diablerist there are several cards that are played, because for the active
+  player the frequency of this event is much more in their control, and they're mostly
+  related to avoiding the bloodhunt. The cards for the reacting party are not commonly played.
+</p>
+
+<figure>
+<img src="../amaranth_ambrozy_sabatowski_1912.jpg" alt="Amaranth." class="blog-image">
+<figcaption>
+  <em>Amaranth</em> (1912), Ambroży Sabatowski (Polish, 1871-1920) from artvee.com
+</figcaption>
+</figure>
+
+<h3>Lore supports the persistence of diablerie consequences</h3>
+<p>
+  In <em>the World of Darkness</em> and <em>Vampire: The Masquerade</em> vampires with
+  <em>Auspex</em> can detect diablerists. Among the <em>Camarilla</em>, this sin is considered the ultimate crime.
+</p>
+
+<h3>The brutality of VTES can be off-putting.</h3>
+<p>
+  Although the World of Darkness can be violent and mature, it can lead to downsides in a
+  5-player social game. If someone loses quickly in a 2-player game, that's fine, it's the
+  end of the game. In a multiplayer game that can mean that one person has to leave early
+  while the game continues, or just suffer through the rest of it out of courtesy.
+</p>
+<p>
+  The table balance guards against this kind of problem. Other players won’t let someone
+  commit an opportunistic diablerie if it wrecks the balance, for example. This kind of guard rail is
+  exquisite — it doesn’t feel like an arbitrary hardcoded rule, but rather is something
+  that flourishes on the abstract level of player culture. 
+</p>
+<p>
+  However, it doesn’t work always. And it should not work always, either. For example, if
+  <em>bloodhunt</em> was guaranteed, there would be no referendum, 
+  and it wouldn't be interesting at all. 
+  But this can result in situations where someone by chance happens to get into a position
+  where they can get away with diablerie for no consequence — for example, due to a
+  temporary vote lock in the early game.
+</p>
+<p>
+  This proposition is not out to make diablerie impossible, nor
+  is it to say the current system has a flaw. New effects don't have to all be negative. 
+  If successful, this mechanic won't be merely another arbitrary counter,
+  bloodhunt would still be the primary consequence,
+  it could add a little bit of extra strategy and a reason to hesitate to the decision making process,
+  provide an opportunity for new designs, at best might on average improve the players' experience, 
+  and slightly tip the scales against amaranth.
+</p>
+
+                    </div>
             </div>
-        </section>
-        <div style="height: 25vh;"></div> <!-- Added blank space for scrolling -->
+            <div class="scroll-padding"></div>
+        </div>
+        <div class="scroll-padding"></div>
+        
     </main>
+    <div class="cursor-light-overlay"></div>
     
-    <!-- Script for interactive effects -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const background1 = document.querySelector('.background-layer-1');
-            const background2 = document.querySelector('.background-layer-2');
-            const contentContainer = document.querySelector('.content-container');
-            const body = document.body;
+    <script src="../main.js"></script>
+    <script src="../parallax.js"></script>
+    <script src="../audio_player.js"></script>
 
-            // Handle parallax effect and dynamic transparency
-            window.addEventListener('scroll', () => {
-                const scrollY = window.scrollY;
-
-                // Parallax layers move at different rates
-                background1.style.transform = `translateY(-${scrollY * 0.1}px)`;
-                background2.style.transform = `translateY(-${scrollY * 0.05}px)`;
-
-                // Dynamic opacity based on scroll position
-                const scrollPercentage = Math.min(1, scrollY / (contentContainer.clientHeight - window.innerHeight / 2));
-                const opacity = 0.85 - (scrollPercentage * 0.25);
-                contentContainer.style.opacity = opacity.toFixed(2);
-            });
-
-            // Handle the interactive candlelight effect
-            document.addEventListener('mousemove', (e) => {
-                const mouseX = (e.clientX / window.innerWidth) * 100;
-                const mouseY = (e.clientY / window.innerHeight) * 100;
-                body.style.setProperty('--mouse-x', `${mouseX}%`);
-                body.style.setProperty('--mouse-y', `${mouseY}%`);
-            });
-        });
-    </script>
+    <footer class="footer">
+        <div class="audio-player-container">
+            <audio id="myAudio">
+                <source src="satie_erik_gnosiennes_4-6_takuma_sugawara.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="controls">
+                <button id="play-pause-btn" class="player-btn">
+                    <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 5V19L19 12L8 5Z"/>
+                    </svg>
+                    <svg class="pause-icon hidden" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="6" y="5" width="4" height="14"/>
+                        <rect x="14" y="5" width="4" height="14"/>
+                    </svg>
+                </button>
+                <input type="range" id="progressBar" min="0" max="100" value="0" class="progress-slider">
+                <div id="time-display">0:00 / 0:00</div>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.25" class="volume-slider">
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
+
+<!--
+                    <blockquote class="blog-quote">
+                        <p>“The night is a canvas, and the shadows are my paint.”</p>
+                        <footer>— A. Vampire</footer>
+                    </blockquote>
+-->                    
